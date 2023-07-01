@@ -1,0 +1,76 @@
+#flex-1, #flex-2 {
+  margin:1em 0;
+  background-color:purple;
+}
+.item {
+  background-color:yellow;
+  padding:30px;
+
+  flex-basis:0;
+}
+
+/* FLEX 1 */
+#flex-1 {
+  max-width:500px; /* make this no wider than 500px */
+  height:300px;
+
+  /* This is a flex container. What needs to be set? */
+  /* It's a row, vertically-centered, and spaced out. */
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* flex stuff for the last item in #flex-1 here */
+.item:nth-child(4) {
+  align-self:flex-start;
+}
+
+/* FLEX 2 */
+#flex-2 {
+  padding:1em;
+
+  /* This is a flex container. */
+  /* Set needed flex container properties here. */
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:space-between;  
+}
+.double, .single {
+  padding:30px;
+  background-color:yellow;
+
+}
+.double {
+  /* This is a flex item. */
+  /* Use flex-basis and flex-grow so this is double width. */
+  flex:2;
+}
+.single {
+  /* This is a flex item. */
+  /* Use flex-basis and flex-grow so it's single width. */
+  flex:1 0 0;
+  margin: 0 0 0 1em;
+}
+#nested-flex {
+  background-color:#bfa0bf;
+  padding:1em;
+
+  /* This is a flex container. */
+  /* This row can break to a new line. */
+  display:flex;
+  flex-flow:row wrap;
+  
+}
+.card {
+  background-color:orange;
+  height:150px;
+
+  /* This is a flex item. */
+  /* Cards have a default width of 100px (which flex item property?) */
+  flex:1 0 50px;
+  flex-flow: row wrap;
+  justify-content:space-between;
+  margin: 0 10px 0 0;
+}
